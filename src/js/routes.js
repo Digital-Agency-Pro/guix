@@ -1,4 +1,5 @@
 
+import { createBlockHeader } from '../js/blockHeader'
 import { createBlockMain, effectHoverButton } from '../js/blockMain'
 import { createSliderBlockMain } from '../js/sliderBlockMain'
 import { createBlockShowreel } from '../js/blockShowreel'
@@ -17,8 +18,9 @@ export function myRouter () {
     router
       .on({
         '/': () => {
+          createBlockHeader()
           createBlockMain()
-          effectHoverButton()
+          // effectHoverButton()
           createSliderBlockMain()
           createBlockShowreel()
           createBlockServices()

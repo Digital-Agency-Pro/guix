@@ -2,7 +2,7 @@ import { el, setChildren, setAttr } from 'redom'
 import imgTelega from '../assets/img/button-telega.svg'
 
 export function createButTelega () {
-  const containerBut = el('div', {
+  const containerBut = el('button', {
     class: 'container-but-telega'
   })
 

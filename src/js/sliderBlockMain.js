@@ -133,7 +133,7 @@ export function createSliderBlockMain() {
     }
 
 
-    const loop = horizontalLoop('.header__slider-div', {
+    const loop = horizontalLoop('.blockMain__slider-div', {
         repeat: -1,
         speed: 1,
         paddingRight: 30,
@@ -163,31 +163,3 @@ export function createSliderBlockMain() {
 
 }
 
-// export function createSliderBlockMain () {
-
-//   // Получаем слайдер и его содержимое
-//   const slider = document.querySelector('.header-title__slides-container');
-//   const sliderContent = slider.querySelector('.slider-content');
-
-//   // Определяем длительность анимации
-//   const duration = 100;
-
-//   // Создаем анимацию с GSAP
-//   const tween = gsap.fromTo(sliderContent, {
-//       x: 0,
-//       // xPercent: 0
-//       ease: "none"
-//   }, {
-//       x: -sliderContent.offsetWidth, //Элемент .slider-content перемещается на -sliderContent.offsetWidth пикселей от левого края контейнера
-//       // xPercent: -100,
-//       duration: duration,
-//       delay: 0.15,
-//       ease: "none", //линейное перемещение элемента без изменений скорости.
-//       repeat: -1, // бесконечно
-//       yoyo: false,
-//       // stagger: 0,
-//       // complete: () => {
-//       //   sliderContent.style.transform = 'translateX(0)';
-//       // }
-//   });
-// }

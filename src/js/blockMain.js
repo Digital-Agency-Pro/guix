@@ -1,10 +1,9 @@
 
 import { el, setChildren, setAttr } from 'redom'
-import logo from '../assets/img/header/logo.svg'
-import { createButTelega } from '../js/butTelega'
+
 import imgTitle1 from '../assets/img/header/headerTitleImg1.svg'
 import imgTitle2 from '../assets/img/header/headerTitleImg2.svg'
-import { gsap } from 'gsap'
+
 import imgSlide1 from '../assets/img/header/slider/1.svg'
 import imgSlide2 from '../assets/img/header/slider/2.svg'
 import imgSlide3 from '../assets/img/header/slider/3.svg'
@@ -18,99 +17,25 @@ import imgSlide10 from '../assets/img/header/slider/10.svg'
 import imgSlide11 from '../assets/img/header/slider/11.svg'
 import imgSlide12 from '../assets/img/header/slider/12.svg'
 
+import { createButTelega } from '../js/butTelega'
 
-
-const containerHeader = document.getElementById('idHeader')
-
-function createHeaderLi (text, inId, myHref) {
-  const li = el('li', {
-    class: 'navItem'
-  })
-  const a = el('a', {
-    class: 'navLink',
-    textContent: text,
-    href: myHref,
-    id: inId
-  })
-
-  setAttr(a, {
-    'data-navigo': true
-  })
-
-  setChildren(li, a)
-  return li
-}
-
+const containerBlockMain = document.getElementById('idBlockMain')
 
 export function createBlockMain () {
-  const header = el('div', {
-    class: 'header'
-  })
-  const headerDiv = el('div', {
-    class: 'container header-wraper'
-  })
+  const mainWraper = createMainBlockHeader ()
+  setChildren(containerBlockMain, mainWraper)
 
-  const headerDivBlok1 = el('div', {
-    class: 'header-wraper__blok1'
-  })
-
-  const headerDivBlok2 = el('div', {
-    class: 'header-wraper__blok2'
-  })
-
-  const headerImgLogo = el('img', {
-    class: 'header__logo',
-    src: logo,
-    alt: 'logo'
-  })
-
-  const headerButtonTelega = createButTelega()
-
-  const headerUl = el('ul', {
-    class: 'navList'
-  })
-
-  const headerLi1 = createHeaderLi('Проекты', 'idProekt', '/proekts')
-  const headerLi2 = createHeaderLi('Услуги', 'idScors', '/services')
-  const headerLi3 = createHeaderLi('Обо мне', 'idAboutMe', '/about')
-
-  setChildren(headerUl, [
-    headerLi1,
-    headerLi2,
-    headerLi3,
-  ])
-
-
-  const mainHeaderWraper = createMainBlockHeader ()
-  setChildren(containerHeader, header)
-  setChildren(header, [
-    headerDiv,
-    mainHeaderWraper
-  ])
-
-  setChildren(headerDivBlok1, [
-    headerImgLogo,
-    headerUl,
-  ])
-
-  setChildren(headerDivBlok2, headerButtonTelega)
-
-  setChildren(headerDiv, [
-    headerDivBlok1,
-    headerDivBlok2
-  ])
 }
 
 function createItemSlider (imgSlide) {
   const itemDiv = el('div', {
-    class: 'header__slider-div',
+    class: 'blockMain__slider-div',
   })
 
   const itemSlide = el('img', {
-    class: 'header__slider',
+    class: 'blockMain__slider',
     src: imgSlide,
   })
-
   setChildren(itemDiv, itemSlide)
 
   return itemDiv
@@ -118,11 +43,11 @@ function createItemSlider (imgSlide) {
 
 function createHtmlSlider () {
   const containerSlider = el('div', {
-    class: 'header__sliders-container'
+    class: 'blockMain__sliders-container'
   })
 
   const divSliderWraper = el('div', {
-    class: 'header__slider-wraper'
+    class: 'blockMain__slider-wraper'
   })
 
   const slide1 = createItemSlider(imgSlide1)
@@ -160,41 +85,42 @@ function createHtmlSlider () {
 
 function createMainBlockHeader () {
   const divHeaderTitleWraper = el('div', {
-    class: 'container header-title-wraper'
+    class: 'container blockMain__content-wraper'
   })
 
   const divHeaderTitleBlok1 = el('div', {
-    class: 'header-title-blok1'
+    class: 'blockMain__text-content'
   })
 
   const divHeaderTitle = el('div', {
-    class: 'header-title'
+    class: 'blockMain__title'
   })
 
   const wriperTitleText = el('div', {
-    class: 'header-title__wriper-text',
+    class: 'blockMain__wraper-text',
   })
 
-  const titleText1 = el('p', {
-    class: 'header-title__text1',
+  const titleText1 = el('h1', {
+    class: 'blockMain__title-text1',
     textContent: "Эксперт"
   })
 
   const wriperText2AndText3 = el('div', {
-    class: 'header-title__wriper-text2-and-text3'
+    class: 'blockMain__title-wriper-text2-and-text3'
   })
-  const titleText2 = el('p', {
-    class: 'header-title__text1',
+
+  const titleText2 = el('h1', {
+    class: 'blockMain__title-text1',
     textContent: "в области"
   })
 
-  const titleText3 = el('p', {
-    class: 'header-title__text2',
+  const titleText3 = el('h1', {
+    class: 'blockMain__title-text2',
     textContent: "продуктового"
   })
 
-  const titleText4 = el('p', {
-    class: 'header-title__text2',
+  const titleText4 = el('h1', {
+    class: 'blockMain__title-text2',
     textContent: "и сервисного дизайна"
   })
 
@@ -210,17 +136,17 @@ function createMainBlockHeader () {
   ])
 
   const headerImgTitle1= el('img', {
-    class: 'header-title__img',
+    class: 'blockMain__title-img',
     src: imgTitle1
   })
 
   const headerImgTitle2= el('img', {
-    class: 'header-title__img',
+    class: 'blockMain__title-img',
     src: imgTitle2
   })
 
   const elemImages = el('div', {
-    class: 'header-title__wriper-img'
+    class: 'blockMain__title-wraper-img'
   })
 
   setChildren(elemImages, [
@@ -234,20 +160,20 @@ function createMainBlockHeader () {
   ])
 
   const headerDescriptionWriperText = el('div', {
-    class: 'header-desctiption_wriper'
+    class: 'blockMain__desctiption_wraper'
   })
 
   const wriperText1AndText2 = el('div', {
-    class: 'header-desctiption_wriper-text1-text2',
+    class: 'blockMain__desctiption_wraper-text1-text2',
   })
 
   const headerDescriptionText1 = el('p', {
-    class: 'header-desctiption_text1',
+    class: 'blockMain__desctiption-text1',
     textContent: "Оптимизация"
   })
 
   const headerDescriptionText2 = el('p', {
-    class: 'header-desctiption_text2',
+    class: 'blockMain__desctiption-text2',
     textContent: "дизайн-команд"
   })
 
@@ -257,7 +183,7 @@ function createMainBlockHeader () {
   ])
 
   const headerDescriptionText3 = el('p', {
-    class: 'header-desctiption_text2',
+    class: 'blockMain__desctiption-text2',
     textContent: "и процессов в компаниях, аудиты, исследования, юзабилити-тестирование и не только..."
   })
 
@@ -281,41 +207,4 @@ function createMainBlockHeader () {
   return divHeaderTitleWraper
 }
 
-function makeNavLinkActive (element) {
-  const navLink = element.querySelector('.navLink')
-  navLink.classList.add('navLink-active')
-}
 
-function effectHover (element) {
-  gsap.to(element , {
-    duration:1
-  })
-}
-
-
-export function effectHoverButton () {
-  const element = document.querySelector('.button-telegram')
-  element.addEventListener('mouseenter', e => {
-    e.preventDefault()
-    effectHover(e)
-  })
-  element.addEventListener('mouseleave', e => {
-    e.preventDefault()
-  })
-}
-
-function pushButtonExit () {
-  const elements = document.querySelectorAll('.navItem')
-  for (let i = 0, l = elements.length; i < l; ++i) {
-    elements[i].addEventListener('click', e => {
-      e.preventDefault()
-      const nameButton = elements[i].innerText
-
-      if (nameButton === 'Выйти') {
-        localStorage.removeItem('token')
-        localStorage.removeItem('saveDataScors')
-        localStorage.removeItem('saveScore')
-      }
-    })
-  }
-}

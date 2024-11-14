@@ -123,6 +123,7 @@
   font-size: 16px;
   line-height: 20.8px;
   transition: .3s ease-out;
+  outline: none;
 }
 
 .button-telegram__img {
@@ -164,6 +165,7 @@
 .header-wraper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 93px;
 }
 
 .header-wraper__blok1 {
@@ -215,11 +217,11 @@
 
 //---------------main header ---------------------
 
-.header-title-wraper {
+.blockMain__content-wraper {
   position: relative;
 }
 
-.header-title-wraper::after {
+.blockMain__content-wraper::after {
   content: "";
   background-image: url("../assets/img/header/hero-img.png");
   background-repeat: no-repeat;
@@ -235,31 +237,31 @@
   mix-blend-mode: lighten;
 }
 
-.header-title-blok1 {
+.blockMain__text-content {
   opacity: 1;
 }
 
-.header-title {
+.blockMain__title {
   max-width: 884px;
   margin-bottom: 130px;
   padding-top: 100px;
 }
 
-.header-title__img {
+.blockMain__title-img {
   margin-right: 10px;
 }
 
-.header-title__wriper-text {
+.blockMain__wraper-text {
   margin-bottom: 20px;
 }
 
-.header-title__wriper-text2-and-text3 {
+.blockMain__title-wriper-text2-and-text3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.header-title__text2 {
+.blockMain__title-text2 {
   font-family: InterDisplayRegular;
   font-size: 64px;
   line-height: 69.76px;
@@ -267,7 +269,7 @@
   color: var(--common-color-white);
 }
 
-.header-title__text1 {
+.blockMain__title-text1 {
   font-family: InterDisplayRegular;
   font-size: 64px;
   line-height: 69.76px;
@@ -276,15 +278,15 @@
   margin-right: 10px;
 }
 
-.header-desctiption_wriper {
+.blockMain__desctiption_wraper {
   margin-bottom: 100px;
 }
 
-.header-desctiption_wriper-text1-text2 {
+.blockMain__desctiption_wraper-text1-text2 {
   display: flex;
 }
 
-.header-desctiption_text1 {
+.blockMain__desctiption-text1 {
   font-family: InterDisplayRegular;
   font-size: 24px;
   line-height: 30.24px;
@@ -294,7 +296,7 @@
   margin-right: 10px;
 }
 
-.header-desctiption_text2 {
+.blockMain__desctiption-text2 {
   font-family: InterDisplayRegular;
   font-size: 24px;
   line-height: 30.24px;
@@ -303,7 +305,7 @@
   color: var(--common-color-white);
 }
 
-.header__sliders-container {
+.blockMain__sliders-container {
   width: 100%;
   white-space: nowrap;
   position: relative;
@@ -311,7 +313,7 @@
   margin-bottom: 150px;
 }
 
-.header__slider-wraper {
+.blockMain__slider-wraper {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -319,11 +321,11 @@
   gap: 100px;
 }
 
-.header__slider-div {
+.blockMain__slider-div {
   min-width: 250px;
 }
 
-.header__slider {
+.blockMain__slider {
   white-space: nowrap;
   height: 48px;
 }
