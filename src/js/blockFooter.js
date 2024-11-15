@@ -31,12 +31,18 @@ export function createBlockFooter () {
     textContent: 'Разработка премиальных, инновационных, прибыльных дизайнерских решений.'
   })
 
-  const buttonTelegram = createButTelega()
+  const button = createButTelega()
+
+  const wraperButtonTelegram = el('p', {
+    class: 'section-footer__wraperButtonTelegram',
+  })
+
+  setChildren(wraperButtonTelegram, button)
 
   setChildren(sectionFooterBlockLeft, [
     sectionFooterBlockLeftTitle,
     sectionFooterBlockLeftDescription,
-    buttonTelegram
+    wraperButtonTelegram
   ])
   // --------------- block Center ------------------------------
   function createItemList (nameItem) {

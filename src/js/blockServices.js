@@ -22,25 +22,49 @@ export function createBlockServices() {
     class: 'section-services__left-description-wriper',
   })
 
-  const containerLeftDecsriptionSpan = el('span', {
+  const containerLeftDecsription = el('p', {
     class: 'section-services__left-description-span',
     textContent: 'Специализируюсь'
   })
 
-  const containerLeftDecsriptionSpan2 = el('span', {
+  const containerLeftDecsription2 = el('p', {
     class: 'section-services__left-description-p',
-    textContent: 'на нескольких'
+    textContent: 'на '
   })
 
-  const containerLeftDecsriptionP = el('p', {
+  const containerLeftDecsription3 = el('p', {
     class: 'section-services__left-description-p',
-    textContent: 'направлениях в области UI/UX и сервисного дизайна'
+    textContent: 'нескольких'
+  })
+
+  const containerLeftDecsription4 = el('p', {
+    class: 'section-services__left-description-p',
+    textContent: 'направлениях в'
+  })
+
+  const containerLeftDecsription5 = el('p', {
+    class: 'section-services__left-description-p',
+    textContent: 'области UI/UX и'
+  })
+
+  const containerLeftDecsription6 = el('p', {
+    class: 'section-services__left-description-p',
+    textContent: 'сервисного'
+  })
+
+  const containerLeftDecsription7 = el('p', {
+    class: 'section-services__left-description-p',
+    textContent: 'дизайна'
   })
 
   setChildren(containerLeftDecsriptionWriper, [
-    containerLeftDecsriptionSpan,
-    containerLeftDecsriptionSpan2,
-    containerLeftDecsriptionP
+    containerLeftDecsription,
+    containerLeftDecsription2,
+    containerLeftDecsription3,
+    containerLeftDecsription4,
+    containerLeftDecsription5,
+    containerLeftDecsription6,
+    containerLeftDecsription7
   ])
 
 

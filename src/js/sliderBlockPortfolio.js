@@ -242,7 +242,7 @@ export function createSliderBlockPortfolio () {
     startScaleBoxReduce(boxes, i, widthCards)
   }
 
-  document.querySelector(".portfolio-slider__btn-left").addEventListener("click", () => {
+  document.querySelector(".slider__btn-left").addEventListener("click", () => {
     let indexCurrentCard = searchIndexCurrentCard()
     loop.next({ duration: 0.6,  ease: "power1.Out" })
 
@@ -264,7 +264,7 @@ export function createSliderBlockPortfolio () {
     }
   });
 
-  document.querySelector(".portfolio-slider__btn-right").addEventListener("click", () => {
+  document.querySelector(".slider__btn-right").addEventListener("click", () => {
     let indexCurrentCard = searchIndexCurrentCard()
     loop.previous({ duration: 0.6,  ease: "power1.Out" })
     let checkCurrentCard = document.querySelector(".current-card")

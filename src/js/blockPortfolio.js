@@ -20,16 +20,23 @@ export function createBlockPortfolio () {
     textContent: 'Последние проекты'
   })
 
-  const portfolioHeaderButton = el('a', {
+  const portfolioWraperButton = el('h4', {
+    class: 'section-portfolio__wraper-button',
+  })
+
+  const portfolioButton = el('button', {
     class: 'button-telegram',
     textContent: 'Пиши в телегу',
     href: '/telegram',
     id: 'idButtonTelegram'
   })
 
+
+  setChildren(portfolioWraperButton, portfolioButton)
+
   setChildren(portfolioHeader, [
     portfolioHeaderTitle,
-    portfolioHeaderButton
+    portfolioWraperButton
   ])
 
   //--------------------------------------

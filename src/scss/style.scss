@@ -438,7 +438,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 587px;
+  max-width: 587px;
 }
 
 .section-services__left-title {
@@ -463,6 +463,8 @@
   line-height: 40.32px;
   text-align: left;
   margin-right: 7px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .section-services__left-description-p {
@@ -470,7 +472,10 @@
   font-size: 32px;
   line-height: 40.32px;
   text-align: left;
+  margin-right: 8px;
   color: var(--common-color-grey);
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 //------------ right ---------------------------------
@@ -724,7 +729,7 @@
 }
 
 .section-testimonials_wraper-button-slider {
-  opacity: 0;
+  display: none;
 }
 
 // ===================== footer =========================
@@ -833,6 +838,11 @@
     max-width: 1024px;
   }
 //-----------------------------------------------
+  .blockMain__sliders-container {
+    margin-bottom: 10px;
+  }
+
+//-------------------------------------------
   .section-showreel {
     max-height: 435px;
     max-width: 1024px;
@@ -868,9 +878,9 @@
     max-width: 430px;
   }
 
-  .section-services__left-description-wriper {
-    max-width: 430px;
-  }
+  // .section-services__left-description-wriper {
+  //   max-width: 430px;
+  // }
 
   .section-services__left-description-span {
     font-size: 26px;
@@ -918,6 +928,7 @@
     top: 105%;
     left: 45%
   }
+
   //---------------------------------
   .section-footer__block-left {
     width: 284px;
@@ -929,15 +940,34 @@
 @media (max-width: 1023.9px) {
   .container {
     max-width: 768px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
+
+  .blockMain__slider-wraper {
+    gap: 80px;
+  }
+
+  .blockMain__slider-div {
+    min-width: 200px;
+  }
+
 
   .header-wraper__blok2 {
     position: absolute;
     top: 550px;
   }
 
+  .blockMain__title-wraper-img {
+    opacity: 0;
+  }
+
   .blockMain__title {
     margin-bottom: 155px;
+  }
+
+  .blockMain__sliders-container {
+    margin-bottom: 0px;
   }
 
   .navContainer {
@@ -947,10 +977,28 @@
   .blockMain__desctiption_wraper {
     max-width: 376px;
   }
+
+  .blockMain__desctiption-text1 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.2px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+  }
+
+  .blockMain__desctiption-text2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25.2px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+  }
 //-------------------------------------------
   .section-showreel {
-    max-height: 768px;
-    max-width: 1024px;
+    max-height: 435px;
+    max-width: 768px;
   }
 
   .section-showreel__video {
@@ -960,6 +1008,10 @@
   }
 
   //--------------------------
+  .section-services__left {
+    max-width: 768px;
+  }
+
   .section-services {
     flex-direction: column;
     margin-bottom: 145px;
@@ -968,6 +1020,16 @@
   .section-services__but-telegram {
     position: absolute;
     top: 700px;
+  }
+
+  .section-services__left-description-span {
+    font-size: 20px;
+    line-height: 25.2px;
+  }
+
+  .section-services__left-description-p {
+    font-size: 20px;
+    line-height: 25.2px;
   }
 
   //--------------------------------------------
@@ -996,8 +1058,7 @@
   //-------------------------------------
 
   .section-footer__block-center {
-    opacity: 0;
-    max-width: 20px;
+    display: none;
   }
 
   .section-testimonials_wraper-button-slider {
@@ -1013,8 +1074,156 @@
 
   .container {
     max-width: 320px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
+  .header-wraper {
+    margin-bottom: 70px;
+  }
 
+  .header-wraper__blok1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .header-wraper__blok2 {
+   top: 630px;
+  }
+
+  .blockMain__title-text1 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 43.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .blockMain__title-text2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 43.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+
+  .blockMain__content-wraper::after {
+    background-position: center;
+    top: -130px;
+    left: 50px;
+  }
+  .blockMain__title {
+    padding-top: 280px;
+  }
+
+  //---------------------------------
+  .section-showreel {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    max-height: 218px;
+    max-width: 320px;
+    margin-bottom: 520px;
+  }
+
+  .section-showreel__video {
+    top: 90px;
+    max-width: 320px;
+    min-width: 320px;
+    height: 100%;
+  }
+
+  .section-showreel__up {
+    margin-bottom: 282px;
+  }
+
+  .section-showreel__butSound {
+    position: absolute;
+    top: 236px;
+    left: 242px;
+  }
+
+  .section-showreel__down {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-showreel__down-content {
+    margin-bottom: 20px;
+  }
+  .section-services__left {
+    max-width: 320px;
+  }
+
+  .section-portfolio__wraper-button {
+    display: none;
+  }
+
+  .section-portfolio {
+    margin-bottom: 60px;
+  }
+  //--------------------------------------------
+
+  .portfolio-slider__wrapper {
+    height: 438px;
+  }
+
+  .portfolio-slider__card-box {
+    width: 280px;
+    height: 438px;
+  }
+
+  .card__image {
+    height: 438px;
+    object-fit: cover;
+  }
+
+  .prev-card img {
+    height: 438px;
+  }
+
+  .portfolio-slider__wraper-button {
+    display: none;
+  }
+  //-------------------------------------
+
+  .section-testimonials {
+    margin-bottom: 50px;
+  }
+
+  .section-testimonials_wraper-button-slider {
+    display: none;
+  }
+
+  .section-testimonials__video {
+    max-width: 320px;
+    height: 485px;
+  }
+
+  .section-testimonials__card-box {
+    height: 485px;
+    width: 274px;
+  }
+
+  .section-footer__wriper {
+    flex-direction: column;
+  }
+
+  .section-footer__block-left {
+    width: 320px;
+  }
+
+  .section-footer__wraperButtonTelegram {
+    margin-bottom: 40px;
+  }
+
+  .section-footer__wriper {
+    margin-bottom: 40px;
+  }
+  .section-footer__block-last {
+    flex-direction: column;
+  }
 }
 
