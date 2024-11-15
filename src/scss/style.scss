@@ -176,8 +176,6 @@
 }
 
 .header-wraper__blok2 {
-  display: flex;
-  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -292,7 +290,7 @@
   line-height: 30.24px;
   text-align: left;
   max-width: 587px;
-  color: var(--common-color-grey);
+  color: var(--common-color-white);
   margin-right: 10px;
 }
 
@@ -302,7 +300,7 @@
   line-height: 30.24px;
   text-align: left;
   max-width: 587px;
-  color: var(--common-color-white);
+  color: var(--common-color-grey);
 }
 
 .blockMain__sliders-container {
@@ -540,7 +538,7 @@
 //-----------------------------------------------------
 
 .section-portfolio__slider {
-  height: 580px;
+  // height: 580px;
   position: relative;
 }
 
@@ -569,32 +567,38 @@
   position: absolute;
   left: 85%;
   top: 90%;
+}
+
+//------------------------------------
+
+ .slider__wraper-button {
+  position: absolute;
   z-index: 100;
   display: flex;
   justify-content:space-around;
   align-items: center;
 }
 
-.portfolio-slider__btn-wand {
+.slider__btn-wand {
   height: 20px;
   width: 7px;
 }
 
-.portfolio-slider__btn-left {
+.slider__btn-left {
   background: url(../assets/img/portfolio/but/button-slider-left.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.portfolio-slider__btn-left:focus {
+.slider__btn-left:focus {
   transform: scale(1.2);
 }
 
-.portfolio-slider__btn-left:hover {
+.slider__btn-left:hover {
   transform: scale(1.2);
 }
 
-.portfolio-slider__btn-wand {
+.slider__btn-wand {
   background: url(../assets/img/portfolio/but/wand.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -602,21 +606,21 @@
   margin-right: 10px;
 }
 
-.portfolio-slider__btn-right {
+.slider__btn-right {
   background: url(../assets/img/portfolio/but/button-slider-right.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.portfolio-slider__btn-right:focus {
+.slider__btn-right:focus {
   transform: scale(1.2);
 }
 
-.portfolio-slider__btn-right:hover {
+.slider__btn-right:hover {
   transform: scale(1.2);
 }
 
-
+//----------------------------
 
 .portfolio-slider__wrapper {
   height: 580px;
@@ -651,8 +655,13 @@
 
 .current-card img{
   opacity: 1;
-  margin-right: 30px;
+  margin-right: 20px;
 }
+
+.current-card {
+  margin-right: 20px;
+}
+
 
 .prev-card img {
   opacity: 0.6;
@@ -713,6 +722,10 @@
 
 .section-testimonials__mp4 {
   width: 339px;
+}
+
+.section-testimonials_wraper-button-slider {
+  opacity: 0;
 }
 
 // ===================== footer =========================
@@ -823,9 +836,11 @@
 //-----------------------------------------------
   .section-showreel {
     max-height: 435px;
+    max-width: 1024px;
   }
 
   .section-showreel__video {
+    max-width: 1024px;
     min-width: 1024px;
     height: 100%;
   }
@@ -898,6 +913,12 @@
     width: 206px;
   }
 
+  .section-testimonials_wraper-button-slider {
+    position: absolute;
+    opacity: 1;
+    top: 105%;
+    left: 45%
+  }
   //---------------------------------
   .section-footer__block-left {
     width: 284px;
@@ -911,7 +932,81 @@
     max-width: 768px;
   }
 
+  .header-wraper__blok2 {
+    position: absolute;
+    top: 550px;
+  }
 
+  .blockMain__title {
+    margin-bottom: 155px;
+  }
+
+  .navContainer {
+    opacity: 0;
+  }
+
+  .blockMain__desctiption_wraper {
+    max-width: 376px;
+  }
+//-------------------------------------------
+  .section-showreel {
+    max-height: 768px;
+    max-width: 1024px;
+  }
+
+  .section-showreel__video {
+    max-width: 768px;
+    min-width: 768px;
+    height: 100%;
+  }
+
+  //--------------------------
+  .section-services {
+    flex-direction: column;
+    margin-bottom: 145px;
+  }
+
+  .section-services__but-telegram {
+    position: absolute;
+    top: 700px;
+  }
+
+  //--------------------------------------------
+
+  .portfolio-slider__wrapper {
+    height: 272px;
+  }
+
+  .portfolio-slider__card-box {
+    width: 477px;
+    height: 270px;
+  }
+
+  .card__image {
+    height: 270px;
+  }
+
+  .prev-card img {
+    height: 194px;
+  }
+
+  .portfolio-slider__wraper-button {
+    left: 73%;
+    top: 82%;
+  }
+  //-------------------------------------
+
+  .section-footer__block-center {
+    opacity: 0;
+    max-width: 20px;
+  }
+
+  .section-testimonials_wraper-button-slider {
+    position: absolute;
+    opacity: 1;
+    top: 105%;
+    left: 40%
+  }
 }
 
 /*------------------------------------------------------------------------------*/

@@ -43,12 +43,20 @@ export function createBlockServices() {
     containerLeftDecsriptionP
   ])
 
+
+
   const buttonTelegram = createButTelega()
+
+  const containerbuttonTelegram = el('div', {
+    class: 'section-services__but-telegram',
+  })
+
+  setChildren(containerbuttonTelegram, buttonTelegram)
 
   setChildren(containerLeft, [
     containerLeftTitle,
     containerLeftDecsriptionWriper,
-    buttonTelegram
+    containerbuttonTelegram
   ])
 
   //------------------ right -------------------

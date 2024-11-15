@@ -2,6 +2,7 @@ import { el, setChildren, setAttr, text } from 'redom'
 import imgSlider1 from '../assets/img/portfolio/img1.jpg'
 import imgSlider2 from '../assets/img/portfolio/img2.jpg'
 import imgSlider3 from '../assets/img/portfolio/img4.jpg'
+import { createButSleder } from '../js/butSlider'
 
 const containerPortfolio = document.getElementById('idPortfolio')
 
@@ -73,29 +74,13 @@ export function createBlockPortfolio () {
 
   setChildren(sectionPortfolioSlider, portfolioSlider)
   //-------------- button slider ------------------------
-
   const wraperButton = el('div', {
     class: 'portfolio-slider__wraper-button'
   })
 
-  const btnLeft = el('div', {
-    class: 'portfolio-slider__btn-left  btn'
-  })
+  let button = createButSleder()
 
-  const btnWand = el('div', {
-    class: 'portfolio-slider__btn-wand'
-  })
-
-  const btnRight = el('div', {
-    class: 'portfolio-slider__btn-right  btn'
-  })
-
-  setChildren(wraperButton, [
-    btnLeft,
-    btnWand,
-    btnRight
-  ])
-
+  setChildren(wraperButton, button)
   // --------------------------------------------------------
 
   setChildren(sectionPortfolio, [

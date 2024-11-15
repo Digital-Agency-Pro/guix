@@ -1,4 +1,5 @@
 import { el, setChildren, setAttr, text } from 'redom'
+import { createButSleder } from '../js/butSlider'
 
 import inFile1 from '../assets/video/testimonials/5.mp4'
 import inFile2 from '../assets/video/testimonials/3.mp4'
@@ -9,6 +10,14 @@ import inFile5 from '../assets/video/testimonials/4.mp4'
 const containerTestimonials = document.getElementById('idTestimonials')
 
 export function createBlockTestimonials () {
+
+  const buttonSlider = createButSleder()
+
+  const wraperButSlider = el('div', {
+    class: 'section-testimonials_wraper-button-slider'
+  })
+
+  setChildren(wraperButSlider, buttonSlider)
 
   const sectionTestimonials = el('div', {
     class: 'container section-testimonials'
@@ -62,7 +71,8 @@ export function createBlockTestimonials () {
 
   setChildren(sectionTestimonials, [
     sectionTestimonialsTitle,
-    sectionTestimonialsVideo
+    sectionTestimonialsVideo,
+    wraperButSlider
   ])
 
   setChildren(containerTestimonials, sectionTestimonials)
