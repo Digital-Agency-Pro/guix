@@ -9,6 +9,7 @@ import { createSliderBlockPortfolio } from '../js/sliderBlockPortfolio'
 import { createBlockTestimonials } from '../js/blockTestimonials'
 import { createBlockFooter } from '../js/blockFooter'
 import { scrollTrigger } from '../js/scrolTrigger'
+import { scramblerText } from '../js/scramblerText'
 import { getWidth } from '../js/getWidth'
 import Navigo from 'navigo'
 
@@ -21,6 +22,7 @@ export function myRouter () {
           createBlockHeader()
           createBlockMain()
           // effectHoverButton()
+          scramblerText()
           createSliderBlockMain()
           createBlockShowreel()
           createBlockServices()

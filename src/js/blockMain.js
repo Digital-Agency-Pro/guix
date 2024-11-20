@@ -102,7 +102,8 @@ function createMainBlockHeader () {
 
   const titleText1 = el('h1', {
     class: 'blockMain__title-text1',
-    textContent: "Эксперт"
+    // textContent: "Эксперт",
+    id: "idBlockMaintext1"
   })
 
   const wriperText2AndText3 = el('div', {
@@ -111,17 +112,20 @@ function createMainBlockHeader () {
 
   const titleText2 = el('h1', {
     class: 'blockMain__title-text1',
-    textContent: "в области"
+    // textContent: "в области"
+    id: "idBlockMaintext2"
   })
 
   const titleText3 = el('h1', {
     class: 'blockMain__title-text2',
-    textContent: "продуктового"
+    // textContent: "продуктового"
+    id: "idBlockMaintext3"
   })
 
   const titleText4 = el('h1', {
     class: 'blockMain__title-text2',
-    textContent: "и сервисного дизайна"
+    // textContent: "и сервисного дизайна"
+    id: "idBlockMaintext4"
   })
 
   setChildren(wriperText2AndText3, [
