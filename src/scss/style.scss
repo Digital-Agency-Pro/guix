@@ -213,6 +213,10 @@
   background: rgba(71, 52, 247, 1);
 }
 
+.nav-burger__wpaper {
+  display: none;
+}
+
 //---------------main header ---------------------
 
 .blockMain__content-wraper {
@@ -956,7 +960,7 @@
 
   .header-wraper__blok2 {
     position: absolute;
-    top: 550px;
+    top: 463px;
   }
 
   .blockMain__title-wraper-img {
@@ -971,8 +975,29 @@
     margin-bottom: 0px;
   }
 
+  .header-wraper {
+    display: block;
+
+  }
+  .header-wraper__blok1 {
+    justify-content: space-between;
+  }
+
   .navContainer {
-    opacity: 0;
+    display: none;
+  }
+
+  .nav-burger__wpaper {
+    display: block;
+  }
+
+  .nav-burger__toggle {
+    display: block;
+    width: 6rem;
+    height: 0.3rem;
+    margin-bottom: 0.3rem;
+    background-color: #fff;
+    z-index: 5;
   }
 
   .blockMain__desctiption_wraper {

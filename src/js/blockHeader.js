@@ -24,6 +24,13 @@ function createHeaderLi (text, inId, myHref) {
   return li
 }
 
+function createBurgerLi () {
+  const span = el('span', {
+    class: 'nav-burger__toggle'
+  })
+  return span
+}
+
 
 export function createBlockHeader () {
   const header = el('div', {
@@ -67,6 +74,20 @@ export function createBlockHeader () {
     headerLi3,
   ])
 
+  const navBurger = el('nav', {
+    class: 'nav-burger__wpaper'
+  })
+
+  const span1 = createBurgerLi()
+  const span2 = createBurgerLi()
+  const span3 = createBurgerLi()
+
+  setChildren(navBurger, [
+    span1,
+    span2,
+    span3
+  ])
+
   setChildren(headerNav, headerUl)
 
   setChildren(containerHeader, header)
@@ -76,6 +97,7 @@ export function createBlockHeader () {
   setChildren(headerDivBlok1, [
     headerImgLogo,
     headerNav,
+    navBurger
   ])
 
   setChildren(headerDivBlok2, headerButtonTelega)
