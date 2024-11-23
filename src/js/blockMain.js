@@ -29,11 +29,11 @@ export function createBlockMain () {
 
 function createItemSlider (imgSlide) {
   const itemDiv = el('div', {
-    class: 'blockMain__slider-div',
+    class: 'block-main__slider-div',
   })
 
   const itemSlide = el('img', {
-    class: 'blockMain__slider',
+    class: 'block-main__slider',
     src: imgSlide,
   })
   setChildren(itemDiv, itemSlide)
@@ -43,11 +43,11 @@ function createItemSlider (imgSlide) {
 
 function createHtmlSlider () {
   const containerSlider = el('div', {
-    class: 'blockMain__sliders-container'
+    class: 'block-main__sliders-container'
   })
 
   const divSliderWraper = el('div', {
-    class: 'blockMain__slider-wraper'
+    class: 'block-main__slider-wraper'
   })
 
   const slide1 = createItemSlider(imgSlide1)
@@ -85,46 +85,42 @@ function createHtmlSlider () {
 
 function createMainBlockHeader () {
   const divHeaderTitleWraper = el('div', {
-    class: 'container blockMain__content-wraper'
+    class: 'container block-main__content-wraper'
   })
 
   const divHeaderTitleBlok1 = el('div', {
-    class: 'blockMain__text-content'
+    class: 'block-main__text-content'
   })
 
   const divHeaderTitle = el('div', {
-    class: 'blockMain__title'
+    class: 'block-main__title'
   })
 
   const wriperTitleText = el('div', {
-    class: 'blockMain__wraper-text',
+    class: 'block-main__wraper-text',
   })
 
   const titleText1 = el('h1', {
-    class: 'blockMain__title-text1',
-    // textContent: "Эксперт",
+    class: 'block-main__title-text1',
     id: "idBlockMaintext1"
   })
 
   const wriperText2AndText3 = el('div', {
-    class: 'blockMain__title-wriper-text2-and-text3'
+    class: 'block-main__title-wriper-text2-and-text3'
   })
 
   const titleText2 = el('h1', {
-    class: 'blockMain__title-text1',
-    // textContent: "в области"
+    class: 'block-main__title-text1',
     id: "idBlockMaintext2"
   })
 
   const titleText3 = el('h1', {
-    class: 'blockMain__title-text2',
-    // textContent: "продуктового"
+    class: 'block-main__title-text2',
     id: "idBlockMaintext3"
   })
 
   const titleText4 = el('h1', {
-    class: 'blockMain__title-text2',
-    // textContent: "и сервисного дизайна"
+    class: 'block-main__title-text2',
     id: "idBlockMaintext4"
   })
 
@@ -140,17 +136,17 @@ function createMainBlockHeader () {
   ])
 
   const headerImgTitle1= el('img', {
-    class: 'blockMain__title-img',
+    class: 'block-main__title-img',
     src: imgTitle1
   })
 
   const headerImgTitle2= el('img', {
-    class: 'blockMain__title-img',
+    class: 'block-main__title-img',
     src: imgTitle2
   })
 
   const elemImages = el('div', {
-    class: 'blockMain__title-wraper-img'
+    class: 'block-main__title-wraper-img'
   })
 
   setChildren(elemImages, [
@@ -164,20 +160,20 @@ function createMainBlockHeader () {
   ])
 
   const headerDescriptionWriperText = el('div', {
-    class: 'blockMain__desctiption_wraper'
+    class: 'block-main__desctiption_wraper'
   })
 
   const wriperText1AndText2 = el('div', {
-    class: 'blockMain__desctiption_wraper-text1-text2',
+    class: 'block-main__desctiption_wraper-text1-text2',
   })
 
   const headerDescriptionText1 = el('p', {
-    class: 'blockMain__desctiption-text1',
+    class: 'block-main__desctiption-text1',
     textContent: "Оптимизация"
   })
 
   const headerDescriptionText2 = el('p', {
-    class: 'blockMain__desctiption-text2',
+    class: 'block-main__desctiption-text2',
     textContent: "дизайн-команд"
   })
 
@@ -187,7 +183,7 @@ function createMainBlockHeader () {
   ])
 
   const headerDescriptionText3 = el('p', {
-    class: 'blockMain__desctiption-text2',
+    class: 'block-main__desctiption-text2',
     textContent: "и процессов в компаниях, аудиты, исследования, юзабилити-тестирование и не только..."
   })
 

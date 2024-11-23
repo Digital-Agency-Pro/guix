@@ -10,6 +10,7 @@ import { createBlockTestimonials } from '../js/blockTestimonials'
 import { createBlockFooter } from '../js/blockFooter'
 import { scrollTrigger } from '../js/scrolTrigger'
 import { scramblerText } from '../js/scramblerText'
+import { burgerNav } from '../js/burger'
 import { getWidth } from '../js/getWidth'
 import Navigo from 'navigo'
 
@@ -22,6 +23,7 @@ export function myRouter () {
           createBlockHeader()
           createBlockMain()
           // effectHoverButton()
+          burgerNav()
           scramblerText()
           createSliderBlockMain()
           createBlockShowreel()

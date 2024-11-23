@@ -133,7 +133,7 @@ export function createSliderBlockMain() {
     }
 
 
-    const loop = horizontalLoop('.blockMain__slider-div', {
+    const loop = horizontalLoop('.block-main__slider-div', {
         repeat: -1,
         speed: 1,
         paddingRight: 30,
