@@ -39,7 +39,7 @@ export function createBlockTestimonials () {
   function createCardBox(inFile) {
     const cardBox = el('video', {
       class: 'section-testimonials__card-box',
-      controls: true
+      // controls: true
     })
 
     const video = el('source', {

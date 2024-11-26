@@ -165,7 +165,6 @@
 .header-wraper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 93px;
 }
 
 .header__container {
@@ -190,6 +189,10 @@
   display: flex;
 }
 
+.header__nav-item {
+  outline: none;
+}
+
 .header__nav-link {
   font-family: InterDisplayRegular;
   font-size: 18px;
@@ -198,6 +201,7 @@
   color: var(--common-color-white);
   padding: 18px 26px 18px 26px;
   transition: .2s ease-out;
+  outline: none;
 }
 
 .header__nav-link:hover {
@@ -893,6 +897,7 @@
   //---------------------------------------------
   .section-services__left {
     max-width: 430px;
+    position: relative;
   }
 
   .section-services__left-description-span {
@@ -966,6 +971,7 @@
 
   .nav-burger__nav-item {
     margin-bottom: 10px;
+    outline: none;
   }
 
   .block-main__slider-wraper {
@@ -1009,10 +1015,7 @@
 
   .nav-burger__wpaper {
     display: block;
-    padding: 5px;
-    top: 1.2rem;
     cursor: pointer;
-    z-index: 4;
   }
 
   .nav-burger__toggle {
@@ -1075,7 +1078,7 @@
 
   .section-services__but-telegram {
     position: absolute;
-    top: 700px;
+    top: 655px;
   }
 
   .section-services__left-description-span {
@@ -1134,17 +1137,9 @@
     padding-right: 5px;
   }
 
-  .header-wraper {
-    margin-bottom: 70px;
-  }
-
   .header__container {
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-
-  .nav-burger__wpaper {
-    top: 0.3rem;
   }
 
   .header__wraper-btn-telega {

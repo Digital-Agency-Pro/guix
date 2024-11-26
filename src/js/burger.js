@@ -2,7 +2,7 @@
 import { gsap } from "gsap";
 
 export function burgerNav() {
-  const navBurgerWrapper = document.querySelector(".nav-burger__wpaper");
+  const burgerWrapper = document.querySelector(".nav-burger__wpaper");
   const btnBurgerFirst = document.querySelectorAll(".nav-burger__toggle:first-child");
   const btnBurgerLast = document.querySelectorAll(".nav-burger__toggle:last-child");
   const btnBurgerMiddle = document.querySelectorAll(".nav-burger__toggle:nth-child(2)");
@@ -34,16 +34,15 @@ export function burgerNav() {
 
 
 
-  const tlNav = gsap.from(navBody, { paused: true, duration: 0.3, opacity: 0 });
+  const tlNav = gsap.from(navBody, {paused: true, duration: 0.3, opacity: 0 });
 
-  const tNavItems = gsap.from(navBodyItems, {paused: true, duration: 0.3, opacity: 1, stagger: 0.2, x: 300});
+  const tNavItems = gsap.from(navBodyItems, {duration: 0.3, opacity: 1, stagger: 0.2, x: 300});
 
 
-  navBurgerWrapper.addEventListener("click", () => {
-    console.log('click')
+  burgerWrapper.addEventListener("click", () => {
     tlBurger.reversed() ? tlBurger.play() : tlBurger.reverse();
     tlNav.reversed() ? tlNav.play() : tlNav.reverse();
     tNavItems.reversed() ? tNavItems.play() : tNavItems.reverse();
-  });
+  })
 }
 

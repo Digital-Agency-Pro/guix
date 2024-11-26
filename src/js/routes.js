@@ -8,7 +8,7 @@ import { createBlockPortfolio } from '../js/blockPortfolio'
 import { createSliderBlockPortfolio } from '../js/sliderBlockPortfolio'
 import { createBlockTestimonials } from '../js/blockTestimonials'
 import { createBlockFooter } from '../js/blockFooter'
-import { scrollTrigger } from '../js/scrolTrigger'
+import { createSliderBlockTestimonials } from '../js/sliderTestimonial'
 import { scramblerText } from '../js/scramblerText'
 import { burgerNav } from '../js/burger'
 import { getWidth } from '../js/getWidth'
@@ -29,8 +29,8 @@ export function myRouter () {
           createBlockShowreel()
           createBlockServices()
           createBlockPortfolio()
-
           createBlockTestimonials()
+          createSliderBlockTestimonials()
           createBlockFooter()
           createSliderBlockPortfolio()
           const widthSleder = getWidth(".portfolio-slider")

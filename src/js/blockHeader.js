@@ -98,7 +98,7 @@ export function createBlockHeader () {
 
   //-----------------burger----------------------
 
-  const navBurger = el('nav', {
+  const navBurger = el('div', {
     class: 'nav-burger__wpaper'
   })
 
