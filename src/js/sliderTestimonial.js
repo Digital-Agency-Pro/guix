@@ -235,7 +235,6 @@ function searchIndexCurrentCard() {
 
 export function createSliderBlockTestimonials () {
   const boxes = gsap.utils.toArray(".section-testimonials__card-box");
-  console.log('boxes', boxes)
   let widthCards = boxes.length
   const loop = horizontalLoop(boxes, { paused: true, paddingRight: 0, draggable: true });
   srartScaleBoxIncrease(boxes, 0, widthCards)
@@ -243,10 +242,18 @@ export function createSliderBlockTestimonials () {
     startScaleBoxReduce(boxes, i, widthCards)
   }
 
-  boxes.forEach((box, i) => box.addEventListener("click", () => {
-    console.log('click')
+  // boxes.forEach((box, i) => box.addEventListener("click", () => {
+  //   console.log('click')
+  //   let indexCurrentCard = searchIndexCurrentCard()
+  //   loop.next({ duration: 0.6, ease: "power3.Out" })
+  //   startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
+  //   srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
+  // }))
+
+
+  boxes.forEach((box, i) => box.addEventListener("touchstart", () => {
     let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 0.6, ease: "power3.Out" })
+    loop.next({ duration: 1, ease: "power3.Out" })
     startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
     srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
   }))
