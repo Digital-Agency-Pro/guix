@@ -224,7 +224,7 @@ function srartScaleBoxIncrease(boxes, number, widthCards) {
 
 
 function searchIndexCurrentCard() {
-  let sliders = document.querySelectorAll(".section-testimonials__card-box");
+  let sliders = document.querySelectorAll(".section-testimonials__card-box-wraper");
   for (let i = 0; i < sliders.length; i++) {
     let checkCurrentCard = sliders[i].classList.contains('current-card')
     if (checkCurrentCard) {
@@ -234,7 +234,8 @@ function searchIndexCurrentCard() {
 }
 
 export function createSliderBlockTestimonials () {
-  const boxes = gsap.utils.toArray(".section-testimonials__card-box");
+  let videos = document.querySelectorAll(".section-testimonials__card-box");
+  const boxes = gsap.utils.toArray(".section-testimonials__card-box-wraper");
   let widthCards = boxes.length
   const loop = horizontalLoop(boxes, { paused: true, paddingRight: 0, draggable: true });
   srartScaleBoxIncrease(boxes, 0, widthCards)
@@ -242,13 +243,12 @@ export function createSliderBlockTestimonials () {
     startScaleBoxReduce(boxes, i, widthCards)
   }
 
-  // boxes.forEach((box, i) => box.addEventListener("click", () => {
-  //   console.log('click')
-  //   let indexCurrentCard = searchIndexCurrentCard()
-  //   loop.next({ duration: 0.6, ease: "power3.Out" })
-  //   startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-  //   srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  // }))
+  videos.forEach((box, i) => box.addEventListener("click", () => {
+    let indexCurrentCard = searchIndexCurrentCard()
+    loop.next({ duration: 0.6, ease: "power3.Out" })
+    startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
+    srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
+  }))
 
 
   boxes.forEach((box, i) => box.addEventListener("touchstart", () => {
@@ -258,8 +258,29 @@ export function createSliderBlockTestimonials () {
     srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
   }))
 
-  boxes.forEach((box, i) => box.addEventListener("mouseover", () => gsap.to(box, { duration: 0.6, scale: 1.02, opacity: 1 })));
-  boxes.forEach((box, i) => box.addEventListener("mouseout", () => gsap.to(box, { duration: 1, scale: 1, opacity: 1 })));
+
+
+  // $(document).ready(function(){
+  //   var controls = {
+  //       video: $("#myvideo"),
+  //       playpause: $("#playpause")
+  //   };
+
+  //   var video = controls.video[0];
+
+  //   controls.playpause.click(function(){
+  //       if (video.paused) {
+  //           video.play();
+  //           $(this).text("Pause");
+  //       } else {
+  //           video.pause();
+  //           $(this).text("Play");
+  //       }
+
+  //       $(this).toggleClass("paused");
+  //   });
+  //   });
+
 }
 
 

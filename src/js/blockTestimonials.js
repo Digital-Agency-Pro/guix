@@ -1,11 +1,11 @@
 import { el, setChildren, setAttr, text } from 'redom'
 import { createButSleder } from '../js/butSlider'
-
 import inFile1 from '../assets/video/testimonials/5.mp4'
 import inFile2 from '../assets/video/testimonials/3.mp4'
 import inFile3 from '../assets/video/testimonials/1.mp4'
 import inFile4 from '../assets/video/testimonials/2.mp4'
 import inFile5 from '../assets/video/testimonials/4.mp4'
+// import butPlay from '../assets/img/showreel/volume-high.svg'
 
 const containerTestimonials = document.getElementById('idTestimonials')
 
@@ -37,6 +37,17 @@ export function createBlockTestimonials () {
   })
 
   function createCardBox(inFile) {
+
+    const cardBoxWraper = el('div', {
+      class: 'section-testimonials__card-box-wraper',
+    })
+
+    const customPlay = el('span', {
+      class: 'section-testimonials__playpause',
+      // src: butPlay,
+      // textContent: 'Play'
+    })
+
     const cardBox = el('video', {
       class: 'section-testimonials__card-box',
       // controls: true
@@ -50,7 +61,12 @@ export function createBlockTestimonials () {
 
     setChildren(cardBox, video)
 
-    return cardBox
+    setChildren(cardBoxWraper , [
+      cardBox,
+      customPlay
+    ])
+
+    return cardBoxWraper
   }
 
   const card1 = createCardBox(inFile1)

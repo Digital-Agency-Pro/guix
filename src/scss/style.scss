@@ -725,16 +725,34 @@
   justify-content:space-between;
 }
 
-.section-testimonials__card-box{
+.section-testimonials__card-box-wraper {
+  position: relative;
+}
+
+.section-testimonials__card-box {
+  position: relative;
   height: 563px;
   gap: 0px;
   border-radius: 1000px;
   border: 2px;
   margin: 0 8px;
-  position: relative;
   flex-shrink: 0;
   cursor: pointer;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+
+.section-testimonials__playpause {
+  position: absolute;
+  background-image: url("../assets/img/showreel/volume-high.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 40%;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .section-testimonials__mp4 {
@@ -860,7 +878,7 @@
   }
 //-----------------------------------------------
   .block-main__sliders-container {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
 //-------------------------------------------
