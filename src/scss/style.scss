@@ -1006,6 +1006,23 @@
     left: 45%
   }
 
+  .section-testimonials__card-text-name {
+    top: 50%;
+    left: 10%;
+  }
+
+  .section-testimonials__card-text-job {
+    top: 65%;
+    left: 35%;
+  }
+
+  .section-testimonials__playpause {
+    width: 90px;
+    height: 90px;
+    top: 72%;
+    left: 30%;
+  }
+
   //---------------------------------
   .section-footer__block-left {
     width: 284px;
@@ -1328,6 +1345,24 @@
     height: 485px;
     width: 274px;
   }
+
+  .section-testimonials__card-text-name {
+    top: 62%;
+    left: 15%;
+  }
+
+  .section-testimonials__card-text-job {
+    top: 70%;
+    left: 35%;
+  }
+
+  .section-testimonials__playpause {
+    width: 90px;
+    height: 90px;
+    top: 78%;
+    left: 35%;
+  }
+  //-------------------------------------
 
   .section-footer__wriper {
     flex-direction: column;
