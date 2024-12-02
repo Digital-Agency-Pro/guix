@@ -137,7 +137,7 @@
 
 .container-but-telega:hover img {
   transition: transform .3s ease-out;
-  transform:rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .container-but-telega:hover .button-telegram {
@@ -727,6 +727,8 @@
 
 .section-testimonials__card-box-wraper {
   position: relative;
+
+
 }
 
 .section-testimonials__card-box {
@@ -737,22 +739,61 @@
   border: 2px;
   margin: 0 8px;
   flex-shrink: 0;
-  cursor: pointer;
+  cursor: e-resize;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  opacity: 0.5;
 }
 
+.section-testimonials__card-text-name {
+  position: absolute;
+  top: 65%;
+  left: 18%;
+  font-family: 'InterDisplayRegular';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26.16px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(255, 255, 255, 1);
+
+}
+
+.section-testimonials__card-text-job {
+  position: absolute;
+  top: 72%;
+  left: 35%;
+  font-family: 'InterDisplayRegular';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 19.62px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(255, 255, 255, 0.41);
+
+}
 
 .section-testimonials__playpause {
   position: absolute;
-  background-image: url("../assets/img/showreel/volume-high.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 60px;
-  height: 60px;
-  top: 50%;
-  left: 40%;
+  width: 90px;
+  height: 90px;
+  top: 80%;
+  left: 35%;
   cursor: pointer;
   z-index: 100;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  transition: .3s ease-out;
+}
+
+.section-testimonials__play {
+  background-image: url("../assets/img/testimonials/butPlay.svg");
+}
+
+.section-testimonials__stop {
+  background-image: url("../assets/img/testimonials/butStop.svg");
 }
 
 .section-testimonials__mp4 {
