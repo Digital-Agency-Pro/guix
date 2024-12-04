@@ -107,13 +107,14 @@ export function createBlockShowreel () {
   const videoShowreel = document.querySelector(".section-showreel__video")
 
   butSound.addEventListener("click", () => {
-    videoShowreel.muted
     if (butSound.classList.contains("not-active-mute")) {
-      butSound.classList.remove("not-active-mute")
-      butSound.classList.add("active-mute")
-    } else {
+        butSound.classList.remove("not-active-mute")
+        butSound.classList.add("active-mute")
+        videoShowreel.muted = !videoShowreel.muted
+      } else {
       butSound.classList.add("not-active-mute")
       butSound.classList.remove("active-mute")
+      videoShowreel.muted = !videoShowreel.muted
     }
   })
 
