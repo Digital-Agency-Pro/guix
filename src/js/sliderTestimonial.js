@@ -200,87 +200,60 @@ function horizontalLoop(items, config) {
   return tl;
 }
 
-function startScaleBoxReduce(boxes, number, widthCards) {
-  if (number > widthCards - 1) {
-    number = 0
-  }
-  gsap.to(boxes[number], {
-    duration: 1,
-  });
-  boxes[number].classList.add("prev-card")
-  boxes[number].classList.remove("current-card")
-}
-
-function srartScaleBoxIncrease(boxes, number, widthCards) {
-  if (number > widthCards - 1) {
-    number = 0
-  }
-  gsap.to(boxes[number], {
-   duration: 1,
- });
- boxes[number].classList.add("current-card")
- boxes[number].classList.remove("prev-card")
-}
-
-
-function searchIndexCurrentCard() {
-  let sliders = document.querySelectorAll(".section-testimonials__card-box-wraper");
-  for (let i = 0; i < sliders.length; i++) {
-    let checkCurrentCard = sliders[i].classList.contains('current-card')
-    if (checkCurrentCard) {
-      return i
-    }
-  }
-}
 
 export function createSliderBlockTestimonials () {
-  let videos = document.querySelectorAll(".section-testimonials__card-box");
   const boxes = gsap.utils.toArray(".section-testimonials__card-box-wraper");
-  let widthCards = boxes.length
   const loop = horizontalLoop(boxes, { paused: true, paddingRight: 0, draggable: true });
-  srartScaleBoxIncrease(boxes, 0, widthCards)
-  for (var i = 1; i < widthCards; i++) {
-    startScaleBoxReduce(boxes, i, widthCards)
+
+  let wraperBut = document.querySelector(".section-testimonials_wraper-button-slider")
+  wraperBut.querySelector(".slider__btn-left").addEventListener("click", () => {
+    loop.next({ duration: 0.6,  ease: "power1.Out" })
+  });
+
+  wraperBut.querySelector(".slider__btn-right").addEventListener("click", () => {
+    loop.previous({ duration: 0.6,  ease: "power1.Out" })
+  });
+
+  const availableScreenWidth = window.screen.availWidth
+    if ( availableScreenWidth < 767.9) {
+      boxes.forEach((box, i) => box.addEventListener("touchmove", () => {
+      loop.next({ duration: 1, ease: "power3.Out" })
+      }))
+      // boxes.forEach((box, i) => box.addEventListener("touchcancel", () => {
+      //   console.log('touchcancel')
+      //   loop.pause({ duration: 1, ease: "power3.Out" })
+      // }))
+    }
+
+    let listVideo = document.querySelectorAll('.section-testimonials__card-box')
+    let listPlaypause = document.querySelectorAll(".section-testimonials__playpause")
+    let listTextName = document.querySelectorAll(".section-testimonials__card-text-name")
+
+    listPlaypause.forEach((box, i) => box.addEventListener("click", () => {
+      box.classList.add("section-testimonials__stop")
+        if (listVideo[i].paused) {
+          listVideo[i].play()
+          if (box.classList.contains("section-testimonials__stop")) {
+            box.classList.remove("section-testimonials__stop")
+            box.classList.add("section-testimonials__play")
+            listTextName[i].classList.remove("active")
+            listTextName[i].classList.add("not-active")
+            listVideo[i].classList.remove("card-box-not-active")
+            listVideo[i].classList.add("card-box-active")
+          }
+
+        } else {
+          listVideo[i].pause()
+          if (box.classList.contains("section-testimonials__play")) {
+            box.classList.remove("section-testimonials__play")
+            box.classList.add("section-testimonials__stop")
+            listTextName[i].classList.remove("not-active")
+            listTextName[i].classList.add("active")
+            listVideo[i].classList.add("card-box-not-active")
+            listVideo[i].classList.remove("card-box-active")
+          }
+        }
+    }))
   }
-
-  videos.forEach((box, i) => box.addEventListener("click", () => {
-    let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 0.6, ease: "power3.Out" })
-    startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-    srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  }))
-
-
-  boxes.forEach((box, i) => box.addEventListener("touchstart", () => {
-    let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 1, ease: "power3.Out" })
-    startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-    srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  }))
-
-
-
-  // $(document).ready(function(){
-  //   var controls = {
-  //       video: $("#myvideo"),
-  //       playpause: $("#playpause")
-  //   };
-
-  //   var video = controls.video[0];
-
-  //   controls.playpause.click(function(){
-  //       if (video.paused) {
-  //           video.play();
-  //           $(this).text("Pause");
-  //       } else {
-  //           video.pause();
-  //           $(this).text("Play");
-  //       }
-
-  //       $(this).toggleClass("paused");
-  //   });
-  //   });
-
-}
 
 

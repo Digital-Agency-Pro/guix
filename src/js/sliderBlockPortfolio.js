@@ -286,16 +286,16 @@ export function createSliderBlockPortfolio () {
 
   });
 
-  boxes.forEach((box, i) => box.addEventListener("click", () => {
-    let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 0.6, ease: "power3.Out" })
-    startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-    srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  }))
+  // boxes.forEach((box, i) => box.addEventListener("click", () => {
+  //   let indexCurrentCard = searchIndexCurrentCard()
+  //   loop.next({ duration: 0.6, ease: "power3.Out" })
+  //   startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
+  //   srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
+  // }))
 
   boxes.forEach((box, i) => box.addEventListener("touchstart", () => {
     let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 1, ease: "power3.Out" })
+    loop.next({ duration: 1.5, ease: "power3.Out" })
     startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
     srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
   }))

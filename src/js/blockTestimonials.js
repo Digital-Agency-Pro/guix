@@ -57,7 +57,7 @@ export function createBlockTestimonials () {
     })
 
     const cardBox = el('video', {
-      class: 'section-testimonials__card-box',
+      class: 'section-testimonials__card-box card-box-not-active',
       // controls: true
     })
 
