@@ -205,6 +205,8 @@ export function createSliderBlockTestimonials () {
   const boxes = gsap.utils.toArray(".section-testimonials__card-box-wraper");
   const loop = horizontalLoop(boxes, { paused: true, paddingRight: 0, draggable: true });
 
+  let listVideo = document.querySelectorAll('.section-testimonials__card-box')
+
   let wraperBut = document.querySelector(".section-testimonials_wraper-button-slider")
   wraperBut.querySelector(".slider__btn-left").addEventListener("click", () => {
     loop.next({ duration: 0.6,  ease: "power1.Out" })
@@ -216,16 +218,12 @@ export function createSliderBlockTestimonials () {
 
   const availableScreenWidth = window.screen.availWidth
     if ( availableScreenWidth < 767.9) {
-      boxes.forEach((box, i) => box.addEventListener("touchmove", () => {
-      loop.next({ duration: 1, ease: "power3.Out" })
+      listVideo.forEach((box, i) => box.addEventListener("touchstart", (e) => {
+        e.preventDefault()
+        loop.next({ duration: 1, ease: "power3.Out" })
       }))
-      // boxes.forEach((box, i) => box.addEventListener("touchcancel", () => {
-      //   console.log('touchcancel')
-      //   loop.pause({ duration: 1, ease: "power3.Out" })
-      // }))
     }
 
-    let listVideo = document.querySelectorAll('.section-testimonials__card-box')
     let listPlaypause = document.querySelectorAll(".section-testimonials__playpause")
     let listTextName = document.querySelectorAll(".section-testimonials__card-text-name")
 

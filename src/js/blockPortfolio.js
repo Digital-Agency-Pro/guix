@@ -1,7 +1,7 @@
 import { el, setChildren, setAttr, text } from 'redom'
 import imgSlider1 from '../assets/img/portfolio/img1.jpg'
 import imgSlider2 from '../assets/img/portfolio/img2.jpg'
-import imgSlider3 from '../assets/img/portfolio/img4.jpg'
+import imgSlider3 from '../assets/img/portfolio/img3.jpg'
 import { createButSleder } from '../js/butSlider'
 
 const containerPortfolio = document.getElementById('idPortfolio')
@@ -55,7 +55,7 @@ export function createBlockPortfolio () {
 
   setChildren(portfolioSlider, portfolioSliderWraper)
 
-  function createCardSlider(inFile) {
+  function createCardSlider(inFile, inText) {
     const cardWraper = el('div', {
       class: 'portfolio-slider__card-box'
     })
@@ -64,14 +64,36 @@ export function createBlockPortfolio () {
       src: inFile
     })
 
-    setChildren(cardWraper, cardImage)
+    const cardWraperTextBut = el('div', {
+      class: 'portfolio-slider__card-container-but-text'
+    })
+
+    const cardText = el('h3', {
+      class: 'portfolio-slider__card-text',
+      textContent: inText
+    })
+
+
+    const cardButImg = el('span', {
+      class: 'portfolio-slider__card-but-img'
+    })
+
+    setChildren(cardWraperTextBut, [
+      cardText,
+      cardButImg
+    ])
+
+    setChildren(cardWraper, [
+      cardImage,
+      cardWraperTextBut
+    ])
 
     return cardWraper
   }
 
-  const card1 = createCardSlider(imgSlider1)
-  const card2 = createCardSlider(imgSlider2)
-  const card3 = createCardSlider(imgSlider3)
+  const card1 = createCardSlider(imgSlider1, 'PlayEstate')
+  const card2 = createCardSlider(imgSlider2, 'RUSAL')
+  const card3 = createCardSlider(imgSlider3, 'RUSAL2')
 
   setChildren(portfolioSliderWraper, [
     card1,

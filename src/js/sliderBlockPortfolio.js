@@ -91,6 +91,7 @@ function horizontalLoop(items, config) {
               times[i] = distanceToStart / pixelsPerSecond;
 
           }
+
           timeWrap = gsap.utils.wrap(0, tl.duration());
       },
       refresh = (deep) => {
@@ -244,7 +245,7 @@ export function createSliderBlockPortfolio () {
 
   document.querySelector(".slider__btn-left").addEventListener("click", () => {
     let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 0.6,  ease: "power1.Out" })
+    loop.next({ duration: 1,  ease: "power1.Out" })
 
     let checkCurrentCard = document.querySelector(".current-card")
     if (checkCurrentCard) {
@@ -266,7 +267,7 @@ export function createSliderBlockPortfolio () {
 
   document.querySelector(".slider__btn-right").addEventListener("click", () => {
     let indexCurrentCard = searchIndexCurrentCard()
-    loop.previous({ duration: 0.6,  ease: "power1.Out" })
+    loop.previous({ duration: 1,  ease: "power1.Out" })
     let checkCurrentCard = document.querySelector(".current-card")
     if (checkCurrentCard) {
       checkCurrentCard.classList.remove("current-card")
