@@ -1,7 +1,7 @@
 import { el, setChildren, setAttr, text } from 'redom'
-import imgSlider1 from '../assets/img/portfolio/img1.jpg'
-import imgSlider2 from '../assets/img/portfolio/img2.jpg'
-import imgSlider3 from '../assets/img/portfolio/img3.jpg'
+import slider1 from '../assets/video/portfolio/bike.mp4'
+import slider2 from '../assets/video/portfolio/roud.mp4'
+import slider3 from '../assets/video/portfolio/sunset.mp4'
 import { createButSleder } from '../js/butSlider'
 
 const containerPortfolio = document.getElementById('idPortfolio')
@@ -56,12 +56,16 @@ export function createBlockPortfolio () {
   setChildren(portfolioSlider, portfolioSliderWraper)
 
   function createCardSlider(inFile, inText) {
-    const cardWraper = el('div', {
-      class: 'portfolio-slider__card-box'
+    const cardWraper = el('video', {
+      class: 'portfolio-slider__card-box',
+      autoplay: true,
+      loop: true,
+
     })
-    const cardImage = el('img', {
-      class: 'card__image',
-      src: inFile
+    const cardImage = el('source', {
+      class: 'portfolio-slider__source',
+      src: inFile,
+      type: 'video/mp4',
     })
 
     const cardWraperTextBut = el('div', {
@@ -91,9 +95,9 @@ export function createBlockPortfolio () {
     return cardWraper
   }
 
-  const card1 = createCardSlider(imgSlider1, 'PlayEstate')
-  const card2 = createCardSlider(imgSlider2, 'RUSAL')
-  const card3 = createCardSlider(imgSlider3, 'RUSAL2')
+  const card1 = createCardSlider(slider1, 'PlayEstate')
+  const card2 = createCardSlider(slider2, 'RUSAL')
+  const card3 = createCardSlider(slider3, 'RUSAL2')
 
   setChildren(portfolioSliderWraper, [
     card1,
