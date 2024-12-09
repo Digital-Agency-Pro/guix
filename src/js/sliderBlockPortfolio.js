@@ -225,7 +225,7 @@ function srartScaleBoxIncrease(boxes, number, widthCards) {
 
 
 function searchIndexCurrentCard() {
-  let sliders = document.querySelectorAll(".portfolio-slider__card-box");
+  let sliders = document.querySelectorAll(".portfolio-slider__card-box-wraper");
   for (let i = 0; i < sliders.length; i++) {
     let checkCurrentCard = sliders[i].classList.contains('current-card')
     if (checkCurrentCard) {
@@ -235,7 +235,7 @@ function searchIndexCurrentCard() {
 }
 
 export function createSliderBlockPortfolio () {
-  const boxes = gsap.utils.toArray(".portfolio-slider__card-box");
+  const boxes = gsap.utils.toArray(".portfolio-slider__card-box-wraper");
   let widthCards = boxes.length
   const loop = horizontalLoop(boxes, { paused: true, paddingRight: 0, draggable: true });
   srartScaleBoxIncrease(boxes, 0, widthCards)
@@ -284,7 +284,6 @@ export function createSliderBlockPortfolio () {
         checkPrevCard[indexCurrentCard - 1].classList.add("current-card")
       }
     }
-
   });
 
   // boxes.forEach((box, i) => box.addEventListener("click", () => {
@@ -302,8 +301,8 @@ export function createSliderBlockPortfolio () {
   }))
 
 
-  boxes.forEach((box, i) => box.addEventListener("mouseover", () => gsap.to(box, { duration: 0.6, scale: 1.02, opacity: 1 })));
-  boxes.forEach((box, i) => box.addEventListener("mouseout", () => gsap.to(box, { duration: 1, scale: 1, opacity: 1 })));
+//   boxes.forEach((box, i) => box.addEventListener("mouseover", () => gsap.to(box, { duration: 0.6, scale: 1.02, opacity: 1 })));
+//   boxes.forEach((box, i) => box.addEventListener("mouseout", () => gsap.to(box, { duration: 1, scale: 1, opacity: 1 })));
 }
 
 

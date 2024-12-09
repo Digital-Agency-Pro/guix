@@ -643,6 +643,7 @@
 //----------------------------
 
 .portfolio-slider__wrapper {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between ;
@@ -658,8 +659,21 @@
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  z-index: 100;
+  z-index: 1;
 }
+
+.current-card .portfolio-slider__card-container-but-text {
+  top: 87%;
+  transition: top 0.5s ease-out;
+}
+
+.prev-card .portfolio-slider__card-container-but-text {
+  top: 74%;
+  transition: top 0.5s ease-out;
+  opacity: 0.5;
+}
+
+
 
 .portfolio-slider__card-but-img {
   background: url(../assets/img/portfolio/but/but-img.svg);
@@ -670,45 +684,55 @@
 
 .portfolio-slider__card-text {
   font-family: InterDisplayRegular;
+  padding: 0;
   font-size: 46px;
   font-weight: 400;
   line-height: 55.2px;
   text-align: left;
+  color: rgba(241, 241, 241, 1);
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  box-shadow: 0px 4px 13.2px 0px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0px 4px 13.2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-slider__card-box-wraper {
+  position: relative;
+  height: 580px;
+  border-radius: 30px;
+  transition: height 0.5s ease-out;
 }
 
 .portfolio-slider__card-box {
-  height: 580px;
+  object-fit: cover;
   width: 1187px;
+  height: 580px;
   padding: 0;
-  position: relative;
   flex-shrink: 0;
+  border: 5px solid var(--common-color-black);
   border-radius: 30px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-right: 20px;
+  transition: height 0.5s ease-out;
 }
 
 .portfolio-slider__source {
-  width: 1187px;
   height: 580px;
   border-radius: 30px;
-  transition: all .4s ease-out;
+  transition: height 1s ease-out;
 }
 
-.current-card {
-  width: 1187px;
+.current-card .portfolio-slider__card-box {
   height: 580px;
   opacity: 1;
+  border-radius: 30px;
+  transition: height 0.5s ease-out;
 }
 
-.prev-card {
+.prev-card .portfolio-slider__card-box {
   opacity: 0.6;
-  max-height: 500px;
-  transition: max-height 0.4s ease-out;
+  height: 500px;
+  transition: height 1s ease-out;
 }
 
 .prev-card:hover {
@@ -1020,6 +1044,13 @@
     line-height: 48px;
   }
 
+  .portfolio-slider__wrapper {
+    height: 353px;
+  }
+
+  .portfolio-slider__card-box-wraper {
+    height: 353px;
+  }
 
   .portfolio-slider__card-box {
     width: 666px;
@@ -1028,16 +1059,23 @@
 
   .portfolio-slider__source {
     height: 353px;
-    width: 666px;
   }
 
-  .current-card {
+  .current-card .portfolio-slider__card-box {
     height: 353px;
     width: 666px
   }
 
-  .prev-card {
+  .prev-card .portfolio-slider__card-box {
     height: 280px;
+  }
+
+  .current-card .portfolio-slider__card-container-but-text {
+    top: 80%;
+  }
+
+  .prev-card .portfolio-slider__card-container-but-text {
+    top: 61%;
   }
 
   .portfolio-slider__wraper-button {
@@ -1233,25 +1271,37 @@
   //--------------------------------------------
 
   .portfolio-slider__wrapper {
-    height: 272px;
+    height: 270px;
+  }
+
+  .portfolio-slider__card-box-wraper {
+    height: 270px;
   }
 
   .portfolio-slider__card-box {
     width: 477px;
+    height: 270px;
   }
 
   .portfolio-slider__source {
     height: 270px;
-    width: 477px;
   }
 
-  .current-card {
+  .current-card .portfolio-slider__card-box {
     height: 270px;
     width: 477px;
   }
 
-  .prev-card {
-    height: 270px;
+  .prev-card .portfolio-slider__card-box {
+    height: 195px;
+  }
+
+  .current-card .portfolio-slider__card-container-but-text {
+    top: 72%;
+  }
+
+  .prev-card .portfolio-slider__card-container-but-text {
+    top: 49%;
   }
 
   .portfolio-slider__wraper-button {
@@ -1390,7 +1440,6 @@
   }
 
   .portfolio-slider__card-box {
-    margin-right: 10px;
     width: 280px;
     height: 438px;
   }
@@ -1405,17 +1454,21 @@
     line-height: 32.4px;
   }
 
-  .portfolio-slider__source {
-    object-fit: cover;
-  }
-
-  .current-card {
+  .current-card .portfolio-slider__card-box {
     height: 438px;
     width: 280px;
   }
 
-  .prev-card {
+  .prev-card .portfolio-slider__card-box {
     height: 438px;
+  }
+
+  .current-card .portfolio-slider__card-container-but-text {
+    top: 135%;
+  }
+
+  .prev-card .portfolio-slider__card-container-but-text {
+    top: 135%;
   }
 
   .portfolio-slider__wraper-button {

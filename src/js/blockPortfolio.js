@@ -56,13 +56,17 @@ export function createBlockPortfolio () {
   setChildren(portfolioSlider, portfolioSliderWraper)
 
   function createCardSlider(inFile, inText) {
-    const cardWraper = el('video', {
+
+    const cardWraper = el('div', {
+      class: 'portfolio-slider__card-box-wraper'
+    })
+
+    const cardVideo = el('video', {
       class: 'portfolio-slider__card-box',
       autoplay: true,
       loop: true,
-
     })
-    const cardImage = el('source', {
+    const cardSource = el('source', {
       class: 'portfolio-slider__source',
       src: inFile,
       type: 'video/mp4',
@@ -87,9 +91,13 @@ export function createBlockPortfolio () {
       cardButImg
     ])
 
+    setChildren(cardVideo, [
+      cardSource,
+    ])
+
     setChildren(cardWraper, [
-      cardImage,
-      cardWraperTextBut
+      cardWraperTextBut,
+      cardVideo
     ])
 
     return cardWraper
