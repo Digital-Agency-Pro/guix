@@ -293,13 +293,24 @@ export function createSliderBlockPortfolio () {
   //   srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
   // }))
 
-  boxes.forEach((box, i) => box.addEventListener("touchstart", () => {
-    let indexCurrentCard = searchIndexCurrentCard()
-    loop.next({ duration: 1.5, ease: "power3.Out" })
-    startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-    srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  }))
+  const availableScreenWidth = window.screen.availWidth
+  if ( availableScreenWidth < 767.9) {
+    const listingPrevCard = document.querySelectorAll(".prev-card")
+    const listingCurrentCard = document.querySelectorAll(".current-card")
 
+    listingPrevCard.forEach( prev => {
+      prev.classList.remove("prev-card")
+    })
+
+    listingCurrentCard.forEach( current => {
+      current.classList.add("current-card")
+    })
+
+    boxes.forEach((box, i) => box.addEventListener("touchmove", (e) => {
+      e.preventDefault()
+      loop.next({ duration: 3, ease: "power3.Out" })
+    }))
+  }
 
 //   boxes.forEach((box, i) => box.addEventListener("mouseover", () => gsap.to(box, { duration: 0.6, scale: 1.02, opacity: 1 })));
 //   boxes.forEach((box, i) => box.addEventListener("mouseout", () => gsap.to(box, { duration: 1, scale: 1, opacity: 1 })));
