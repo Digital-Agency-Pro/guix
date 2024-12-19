@@ -16,7 +16,7 @@ export function burgerNav() {
           rotation: 45,
           transformOrigin: "50% 50%",
           x: -10,
-          y: 0,
+          y: 14,
           backgroundColor: "rgba(122, 122, 122, 1)"
       })
       .to(
@@ -24,8 +24,8 @@ export function burgerNav() {
           {
               rotation: -45,
               transformOrigin: "-50% 50%",
-              x: 5,
-              y: 35,
+              x: 4,
+              y: 40,
               backgroundColor: "rgba(122, 122, 122, 1)"
           },
            "<"

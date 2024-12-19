@@ -286,12 +286,11 @@ export function createSliderBlockPortfolio () {
     }
   });
 
-  // boxes.forEach((box, i) => box.addEventListener("click", () => {
-  //   let indexCurrentCard = searchIndexCurrentCard()
-  //   loop.next({ duration: 0.6, ease: "power3.Out" })
-  //   startScaleBoxReduce(boxes, indexCurrentCard, widthCards)
-  //   srartScaleBoxIncrease(boxes, indexCurrentCard + 1, widthCards)
-  // }))
+
+
+  function applyStyles(element, styles) {
+    Object.assign(element.style, styles);
+  }
 
   const availableScreenWidth = window.screen.availWidth
   if ( availableScreenWidth < 767.9) {
@@ -306,10 +305,31 @@ export function createSliderBlockPortfolio () {
       current.classList.add("current-card")
     })
 
-    boxes.forEach((box, i) => box.addEventListener("touchmove", (e) => {
-      e.preventDefault()
-      loop.next({ duration: 3, ease: "power3.Out" })
-    }))
+
+    const cardTextHover = document.querySelector('.portfolio-slider__card-text')
+    const elemCardWraperHover = document.querySelector('.portfolio-slider__card-box-wraper')
+
+    function toggleState(event) {
+      if (event.type === 'touchmove') {
+        console.log('touchmove', event)
+        loop.next({ duration: 3, ease: "power3.Out" })
+      }
+
+      if (event.type === 'touchend') {
+        loop.paused()
+      }
+
+    }
+
+    boxes.forEach(box => {
+      box.classList.add("current-card")
+
+      box.addEventListener('mouseenter', toggleState);
+      box.addEventListener('mouseleave', toggleState);
+      box.addEventListener('touchstart', toggleState);
+      box.addEventListener('touchend', toggleState);
+      box.addEventListener("touchmove", toggleState);
+    })
   }
 
 //   boxes.forEach((box, i) => box.addEventListener("mouseover", () => gsap.to(box, { duration: 0.6, scale: 1.02, opacity: 1 })));

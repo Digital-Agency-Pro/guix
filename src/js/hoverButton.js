@@ -1,24 +1,24 @@
+import { gsap } from "gsap";
+
 function makeNavLinkActive (element) {
   const navLink = element.querySelector('.navLink')
   navLink.classList.add('navLink-active')
 }
 
-function effectHover (element) {
-  gsap.to(element , {
-    duration:1
-  })
+
+function toggleHoverState(event) {
+  event.target.classList.toggle('on-hover');
 }
 
-
 export function effectHoverButton () {
-  const element = document.querySelector('.button-telegram')
-  element.addEventListener('mouseenter', e => {
-    e.preventDefault()
-    effectHover(e)
+  const listingLink = document.querySelectorAll('.header__nav-link')
+  listingLink.forEach(element => {
+    element.addEventListener('mouseenter', toggleHoverState);
+    element.addEventListener('mouseleave', toggleHoverState);
+    element.addEventListener('touchstart', toggleHoverState);
+    element.addEventListener('touchend', toggleHoverState);
   })
-  element.addEventListener('mouseleave', e => {
-    e.preventDefault()
-  })
+
 }
 
 // function pushButtonExit () {
@@ -36,3 +36,32 @@ export function effectHoverButton () {
 //     })
 //   }
 // }
+
+
+// document.addEventListener('click', function(event) {
+//   const target = event.target;
+
+//   if (target.matches('[data-hover]')) {
+//     event.preventDefault();
+
+//     const element = target;
+//     const onHover = element.getAttribute('data-hover');
+//     const linkHref = element.href;
+
+//     if (linkHref && element.classList.contains(onHover)) {
+//       location.href = linkHref;
+//       return false;
+//     }
+
+//     element.classList.toggle(onHover);
+//   }
+// });
+
+// document.addEventListener('mouseenter', 'mouseleave', 'li.menu__item', function(event) {
+//   const hoverLink = this.querySelector('[data-hover]');
+
+//   if (hoverLink !== null) {
+//     const onHover = hoverLink.getAttribute('data-hover');
+//     hoverLink.classList.toggle(onHover);
+//   }
+// });

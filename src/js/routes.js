@@ -1,6 +1,7 @@
 
 import { createBlockHeader } from '../js/blockHeader'
-import { createBlockMain, effectHoverButton } from '../js/blockMain'
+import { createBlockMain } from '../js/blockMain'
+import { effectHoverButton } from '../js/hoverButton'
 import { createSliderBlockMain } from '../js/sliderBlockMain'
 import { createBlockShowreel } from '../js/blockShowreel'
 import { createBlockServices } from '../js/blockServices'
@@ -22,8 +23,8 @@ export function myRouter () {
         '/': () => {
           createBlockHeader()
           createBlockMain()
-          // effectHoverButton()
           burgerNav()
+          effectHoverButton()
           scramblerText()
           createSliderBlockMain()
           createBlockShowreel()

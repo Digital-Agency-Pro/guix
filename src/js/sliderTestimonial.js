@@ -216,6 +216,35 @@ export function createSliderBlockTestimonials () {
     loop.previous({ duration: 0.6,  ease: "power1.Out" })
   });
 
+  let listPlaypause = document.querySelectorAll(".section-testimonials__playpause")
+  let listTextName = document.querySelectorAll(".section-testimonials__card-text-name")
+
+  listPlaypause.forEach((box, i) => box.addEventListener("click", () => {
+    box.classList.add("section-testimonials__stop")
+      if (listVideo[i].paused) {
+        listVideo[i].play()
+        if (box.classList.contains("section-testimonials__stop")) {
+          box.classList.remove("section-testimonials__stop")
+          box.classList.add("section-testimonials__play")
+          listTextName[i].classList.remove("active-pause-text-name")
+          listTextName[i].classList.add("not-active-pause-text-name")
+          listVideo[i].classList.remove("card-box-not-active")
+          listVideo[i].classList.add("card-box-active")
+        }
+
+      } else {
+        listVideo[i].pause()
+        if (box.classList.contains("section-testimonials__play")) {
+          box.classList.remove("section-testimonials__play")
+          box.classList.add("section-testimonials__stop")
+          listTextName[i].classList.remove("not-active-pause-text-name")
+          listTextName[i].classList.add("active-pause-text-name")
+          listVideo[i].classList.add("card-box-not-active")
+          listVideo[i].classList.remove("card-box-active")
+        }
+      }
+  }))
+
   const availableScreenWidth = window.screen.availWidth
     if ( availableScreenWidth < 767.9) {
       listVideo.forEach((box, i) => box.addEventListener("touchstart", (e) => {
@@ -224,34 +253,7 @@ export function createSliderBlockTestimonials () {
       }))
     }
 
-    let listPlaypause = document.querySelectorAll(".section-testimonials__playpause")
-    let listTextName = document.querySelectorAll(".section-testimonials__card-text-name")
 
-    listPlaypause.forEach((box, i) => box.addEventListener("click", () => {
-      box.classList.add("section-testimonials__stop")
-        if (listVideo[i].paused) {
-          listVideo[i].play()
-          if (box.classList.contains("section-testimonials__stop")) {
-            box.classList.remove("section-testimonials__stop")
-            box.classList.add("section-testimonials__play")
-            listTextName[i].classList.remove("active")
-            listTextName[i].classList.add("not-active")
-            listVideo[i].classList.remove("card-box-not-active")
-            listVideo[i].classList.add("card-box-active")
-          }
-
-        } else {
-          listVideo[i].pause()
-          if (box.classList.contains("section-testimonials__play")) {
-            box.classList.remove("section-testimonials__play")
-            box.classList.add("section-testimonials__stop")
-            listTextName[i].classList.remove("not-active")
-            listTextName[i].classList.add("active")
-            listVideo[i].classList.add("card-box-not-active")
-            listVideo[i].classList.remove("card-box-active")
-          }
-        }
-    }))
   }
 
 
