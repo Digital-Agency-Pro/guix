@@ -309,26 +309,32 @@ export function createSliderBlockPortfolio () {
     const cardTextHover = document.querySelector('.portfolio-slider__card-text')
     const elemCardWraperHover = document.querySelector('.portfolio-slider__card-box-wraper')
 
-    function toggleState(event) {
-      if (event.type === 'touchmove') {
-        console.log('touchmove', event)
+    function handleCancel(evt) {
+      evt.preventDefault()
+      loop.paused()
+    }
+
+    function handleEnd(evt) {
+      evt.preventDefault()
+      loop.paused()
+    }
+
+    function process_touchstart(evt) {
+      evt.preventDefault()
+      if (evt.type === 'touchstart') {
         loop.next({ duration: 3, ease: "power3.Out" })
       }
-
-      if (event.type === 'touchend') {
-        loop.paused()
-      }
-
     }
 
     boxes.forEach(box => {
       box.classList.add("current-card")
 
-      box.addEventListener('mouseenter', toggleState);
-      box.addEventListener('mouseleave', toggleState);
-      box.addEventListener('touchstart', toggleState);
-      box.addEventListener('touchend', toggleState);
-      box.addEventListener("touchmove", toggleState);
+      box.addEventListener('mouseenter', process_touchstart, false);
+      box.addEventListener('mouseleave', process_touchstart, false);
+      box.addEventListener('touchstart', process_touchstart, false);
+      box.addEventListener('touchend', handleEnd, false);
+      box.addEventListener('touchcancel', handleCancel, false);
+      box.addEventListener("touchmove", process_touchstart, false);
     })
   }
 
